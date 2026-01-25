@@ -1,73 +1,105 @@
-* { box-sizing: border-box; }
+/* ---------- THEME VARIABLES ---------- */
+:root {
+  --bg: #121212;
+  --card: #1e1e1e;
+  --text: #e0e0e0;
+  --accent: #90caf9;
+  --button-text: #121212;
+  --border: #555;
+}
 
+body.light {
+  --bg: #f5f5f5;
+  --card: #ffffff;
+  --text: #121212;
+  --accent: #1976d2;
+  --button-text: #ffffff;
+  --border: #ccc;
+}
+
+/* ---------- BASE ---------- */
 body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
   margin: 0;
-  font-family: system-ui, Arial, sans-serif;
-  background: #0f172a;
-  color: #e5e7eb;
-}
-
-.container {
-  max-width: 700px;
-  margin: auto;
   padding: 20px;
+  transition: all 0.3s ease;
 }
 
-h1 {
-  text-align: center;
-  color: #38bdf8;
+/* ---------- THEME TOGGLE ---------- */
+.theme-toggle {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  font-size: 22px;
+  cursor: pointer;
+  background: var(--card);
+  padding: 8px 10px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
-.subtitle {
-  text-align: center;
-  font-size: 14px;
-  color: #94a3b8;
+/* ---------- CONTAINER ---------- */
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: var(--card);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
 
-section {
-  background: #020617;
-  padding: 16px;
-  margin-top: 16px;
-  border-radius: 12px;
+h1, h2, h3 {
+  color: var(--accent);
 }
 
-.row {
+/* ---------- INPUTS ---------- */
+.input-group {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 
-input, select, textarea {
-  width: 100%;
+input, select, button {
   padding: 10px;
-  background: #020617;
-  border: 1px solid #1e293b;
-  color: #e5e7eb;
-  border-radius: 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
 }
-
-textarea { height: 110px; }
 
 button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 10px;
-  background: #1e293b;
-  color: #e5e7eb;
+  background: var(--accent);
+  color: var(--button-text);
   border: none;
-  border-radius: 10px;
   cursor: pointer;
 }
 
-button.primary {
-  background: #38bdf8;
-  color: #020617;
-  font-weight: bold;
+button:hover {
+  opacity: 0.85;
 }
 
-.semester {
-  background: #020617;
-  border: 1px solid #1e293b;
+/* ---------- TABLE ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  border: 1px solid var(--border);
   padding: 10px;
-  border-radius: 8px;
-  margin-top: 8px;
+  text-align: center;
+}
+
+th {
+  background: var(--accent);
+  color: var(--button-text);
+}
+
+hr {
+  margin: 25px 0;
+  border: 1px solid var(--border);
 }

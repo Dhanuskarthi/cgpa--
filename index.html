@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GPA & CGPA Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- OCR -->
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+
+  <!-- PDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h1>GPA & CGPA Calculator</h1>
+  <p class="subtitle">Manual & Screenshot Based</p>
+
+  <!-- Manual Entry -->
+  <section>
+    <h2>Manual Entry</h2>
+    <div class="row">
+      <input type="number" id="credit" placeholder="Credits">
+      <label for="grade">Grade:</label>
+      <select id="grade" title="Select grade">
+        <option>O</option><option>A+</option><option>A</option>
+        <option>B+</option><option>B</option><option>C</option>
+        <option>U</option><option>SA</option><option>WD</option>
+      </select>
+    </div>
+    <button onclick="addManual()">Add Subject</button>
+  </section>
+
+  <!-- OCR -->
+  <section>
+    <h2>Upload Result Screenshot</h2>
+    <label for="imageInput">Select Result Screenshot:</label>
+    <input type="file" id="imageInput" accept="image/*" title="Upload a screenshot of your result">
+    <button onclick="readImage()">Scan Screenshot</button>
+    <textarea id="ocrText" placeholder="Recognized text appears here..."></textarea>
+    <button onclick="addFromOCR()">Add Subjects from Screenshot</button>
+  </section>
+
+  <!-- Subjects -->
+  <section>
+    <h2>Subjects</h2>
+    <ul id="subjectList"></ul>
+
+    <button class="primary" onclick="calculateGPA()">Calculate GPA</button>
+    <h2 id="gpa"></h2>
+
+    <button onclick="saveSemester()">Save Semester</button>
+  </section>
+
+  <!-- Results -->
+  <section>
+    <h2>Overall Result</h2>
+    <div id="semesterList"></div>
+    <h2 id="cgpa"></h2>
+    <button class="primary" onclick="downloadPDF()">Download PDF</button>
+    <button onclick="clearAll()">Reset</button>
+  </section>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

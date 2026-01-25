@@ -1,0 +1,73 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #38bdf8;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+section {
+  background: #020617;
+  padding: 16px;
+  margin-top: 16px;
+  border-radius: 12px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  background: #020617;
+  border: 1px solid #1e293b;
+  color: #e5e7eb;
+  border-radius: 8px;
+}
+
+textarea { height: 110px; }
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #1e293b;
+  color: #e5e7eb;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button.primary {
+  background: #38bdf8;
+  color: #020617;
+  font-weight: bold;
+}
+
+.semester {
+  background: #020617;
+  border: 1px solid #1e293b;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 8px;
+}

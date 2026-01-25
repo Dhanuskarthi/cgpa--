@@ -66,10 +66,52 @@ input, select, button {
   padding: 10px;
   border-radius: 6px;
   border: 1px solid var(--border);
-  background: transparent;
+  background-color: var(--card);
   color: var(--text);
+  font-weight: 600;
 }
 
+/* ---------- SELECT (GRADE DROPDOWN FIX) ---------- */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  padding-right: 40px;
+  cursor: pointer;
+
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--text) 50%),
+    linear-gradient(135deg, var(--text) 50%, transparent 50%);
+  background-position:
+    calc(100% - 20px) calc(50% - 3px),
+    calc(100% - 15px) calc(50% - 3px);
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+}
+
+/* Focus & hover visibility */
+select:hover,
+select:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(144, 202, 249, 0.35);
+}
+
+/* Dropdown options (BLACK & WHITE CLEAR) */
+select option {
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: 600;
+}
+
+/* Dark mode dropdown options */
+body:not(.light) select option {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+/* ---------- BUTTON ---------- */
 button {
   background: var(--accent);
   color: var(--button-text);

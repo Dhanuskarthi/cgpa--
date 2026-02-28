@@ -145,3 +145,39 @@ hr {
   margin: 25px 0;
   border: 1px solid var(--border);
 }
+
+/* ---------- FOOTER ---------- */
+footer {
+  margin-top: 40px;
+  padding: 15px;
+  text-align: center;
+  background: var(--card);
+  color: var(--text);
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  animation: floatFade 3s ease-in-out infinite;
+}
+
+/* Accent glow on name */
+footer span {
+  color: var(--accent);
+  text-shadow: 0 0 8px rgba(144, 202, 249, 0.6);
+}
+
+/* Animation */
+@keyframes floatFade {
+  0% {
+    transform: translateY(6px);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(6px);
+    opacity: 0.6;
+  }
+}
